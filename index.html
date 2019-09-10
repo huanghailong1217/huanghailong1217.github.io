@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>淘宝rem运用</title>
+    <script>
+      !function (d) {
+        var c = d.document; // 获取Dom 对象
+        var a = c.documentElement; // 获取html 对象
+        var b = d.devicePixelRatio; // 屏幕像素比  dpr = 物理像素/独立像素
+        var f;
+
+        function e() {
+          var h = a.getBoundingClientRect().width, g; // 获取html元素宽度
+          if (b === 1) {
+            h = 720
+          }
+          if(h>720){
+              h = 720;
+           } else if(h<320) {
+              h = 320
+           }//设置基准值的极限值
+          g = h / 7.2;
+          a.style.fontSize = g + "px"
+        }
+
+        if (b > 2) {
+          b = 3
+        } else {
+          if (b > 1) {
+            b = 2
+          } else {
+            b = 1
+          }
+        }
+        a.setAttribute("data-dpr", b);
+        d.addEventListener("resize", function () {
+          clearTimeout(f);
+          f = setTimeout(e, 200)
+        }, false);
+        e()
+      }(window);
+    </script>
+    <style>
+      .layout {
+          width: .5rem;
+          height:.5rem;
+          background-color: red;
+        }
+    </style>
 </head>
 <body>
-    <h2>github学习</h2>
+    <div class="layout"></div>
 </body>
 </html>
