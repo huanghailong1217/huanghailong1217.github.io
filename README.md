@@ -1,5 +1,4 @@
-# huanghailong1217.github.io
-屏幕像素适配原理
+# 屏幕像素适配原理
 
 <h3>PX(CSS pixels)</h3> 
 <p>虚拟像素：可以理解为“直觉”像素，CSS和JS使用的抽象单位，浏览器内的一切长度都是以CSS像素为单位的，CSS像素的单位是px。</p>
